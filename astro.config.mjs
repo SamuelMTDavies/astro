@@ -11,7 +11,11 @@ import partytown from '@astrojs/partytown';
 import compress from 'astro-compress';
 import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs';
 
+import storyblok from '@storyblok/astro';
+import { loadEnv } from 'vite';
+
 import { SITE } from './src/config.mjs';
+const env = loadEnv("", process.cwd(), 'STORYBLOK');
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -24,6 +28,7 @@ export default defineConfig({
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',
 
   output: 'static',
+  //output: 'server',
 
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin],
@@ -40,6 +45,20 @@ export default defineConfig({
       serviceEntryPoint: '@astrojs/image/sharp',
     }),
     mdx(),
+
+    storyblok({
+      accessToken: env.STORYBLOK_TOKEN,
+      components: {
+        // Add your components here
+        HubPost: 'storyblok/HubPost',
+        HubPostList: 'storyblok/HubPostList',
+        page: 'storyblok/Page',
+      },
+      apiOptions: {
+        // Choose your Storyblok space region
+        region: 'eu', 
+      },
+    }),
 
     ...whenExternalScripts(() =>
       partytown({

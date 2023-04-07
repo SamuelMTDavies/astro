@@ -43,5 +43,9 @@
   },
   "engines": {
     "node": ">=16.12.0"
+  },
+  "dependencies": {
+    "@storyblok/astro": "^2.0.16",
+    "vite": "^4.2.1"
   }
 }

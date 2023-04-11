@@ -15,6 +15,7 @@ const posts = data.stories.map(story => {
     date: new Date(story.published_at).toLocaleDateString("en-GB", {dateStyle: "full"}),
     description: story.content.description,
     slug: story.slug,
+    image_url: story.content.image.filename,
   }
 })
 
@@ -27,7 +28,7 @@ const { blok } = Astro.props
       <time>{post.date}</time>
       <a href={post.slug}>{post.title}</a>
       <p>{post.description}</p>
-      <img src={post.filename} alt="tEST IMAGE">
+      <img src={post.image_url} alt="tEST IMAGE">
     </li>
   ))}
 </ul>

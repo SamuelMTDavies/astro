@@ -27,7 +27,7 @@ const { blok } = Astro.props
       <time>{post.date}</time>
       <a href={post.slug}>{post.title}</a>
       <p>{post.description}</p>
-      <img src={post.image} alt="tEST IMAGE">
+      <img src={post.content.image.filename} alt="tEST IMAGE">
     </li>
   ))}
 </ul>

@@ -49,6 +49,7 @@
     "@storyblok/astro": "^2.0.16",
     "@types/alpinejs": "^3.7.1",
     "alpinejs": "^3.12.0",
+    "astro-compressor": "^0.4.0",
     "vite": "^4.2.1"
   }
 }

@@ -12,9 +12,11 @@ import storyblok from '@storyblok/astro';
 import { loadEnv } from 'vite';
 import { SITE } from './src/config.mjs';
 import alpinejs from "@astrojs/alpinejs";
+import compressor from "astro-compressor";
 const env = loadEnv("", process.cwd(), 'STORYBLOK');
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const whenExternalScripts = (items = []) => SITE.googleAnalyticsId ? Array.isArray(items) ? items.map(item => item()) : [items()] : [];
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -58,7 +60,7 @@ export default defineConfig({
     js: true,
     svg: false,
     logger: 1
-  }), alpinejs()],
+  }), alpinejs(), compressor({ gzip: false, brotli: true })],
   vite: {
     resolve: {
       alias: {

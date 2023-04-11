@@ -45,7 +45,10 @@
     "node": ">=16.12.0"
   },
   "dependencies": {
+    "@astrojs/alpinejs": "^0.2.1",
     "@storyblok/astro": "^2.0.16",
+    "@types/alpinejs": "^3.7.1",
+    "alpinejs": "^3.12.0",
     "vite": "^4.2.1"
   }
 }

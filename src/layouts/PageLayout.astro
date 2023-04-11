@@ -3,6 +3,8 @@ import Layout from '~/layouts/BaseLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 import Announcement from '~/components/widgets/Announcement.astro';
+import Navbar from "~/components/Navbar.astro";
+import LeftHandImageFeatureSection from "~/components/LeftHandImageFeatureSection.astro"
 
 import { headerData, footerData } from '~/data';
 
@@ -16,6 +18,8 @@ const { meta } = Astro.props;
 ---
 
 <Layout {meta}>
+  <Navbar />
+  <LeftHandImageFeatureSection />
   <slot name="announcement">
     <Announcement />
   </slot>

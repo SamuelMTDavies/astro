@@ -4,8 +4,10 @@
     "strictNullChecks": true,
     "allowJs": true,
     "baseUrl": ".",
+    "useUnknownInCatchVariables": false,
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
+      
     }
   }
 }

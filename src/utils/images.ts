@@ -1,7 +1,7 @@
 const load = async function () {
   let images: Record<string, () => Promise<unknown>> | undefined = undefined;
   try {
-    images = import.meta.glob('../assets/images/**');
+    images = import.meta.glob('~/assets/images/**');
   } catch (e) {
     // continue regardless of error
   }
@@ -26,7 +26,7 @@ export const findImage = async (imagePath?: string) => {
     return imagePath;
   }
 
-  if (!imagePath.startsWith('../assets')) {
+  if (!imagePath.startsWith('~/assets')) {
     return null;
   } // For now only consume images using ~/assets alias (or absolute)
 

@@ -8,6 +8,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 const meta = {
   title: "Mobile App Landing Page",
 };
+export const prerender = true
 ---
 
 <Layout {meta}>
@@ -35,7 +36,7 @@ const meta = {
   <Hero2
     callToAction={{ text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' }}
     callToAction2={{ text: 'Learn more', href: '#features' }}
-    image={{ src: import('~/assets/images/hero.png'), alt: 'AstroWind Hero Image' }}
+    image={{ src: import('../../assets/images/hero.png'), alt: 'AstroWind Hero Image' }}
   >
     <Fragment slot="title">
       Free template for <span class="hidden lg:inline">create your website <br />with</span>

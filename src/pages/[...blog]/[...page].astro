@@ -26,6 +26,7 @@ const meta = {
   noindex: BLOG?.list?.noindex || currentPage > 1,
   ogType: 'blog',
 };
+export const prerender = true
 ---
 
 <Layout {meta}>

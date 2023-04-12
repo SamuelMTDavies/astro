@@ -30,7 +30,7 @@ export const headerData = {
     
   ],
   actions: [
-    { type: 'button', text: 'Log In', href: 'https://app.uown.co/login' },
+    { type: 'text', text: 'Log In', href: 'https://app.uown.co/login' },
     { type: 'button', text: 'Sign Up', href: 'https://app.uown.co/register' }
   ],
 };
@@ -82,6 +82,7 @@ export const footerData = {
   socialLinks: [
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/uownco' },
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/uownco' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/uown.co/' },
   ],
   footNote: `
    

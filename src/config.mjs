@@ -3,7 +3,7 @@ import defaultImage from './assets/images/default.png';
 const CONFIG = {
   name: 'UOWN - A Home For Your Money',
 
-  origin: 'https://astrowind.vercel.app',
+  origin: 'https://www.uown.co',
   basePathname: '/',
   trailingSlash: false,
 

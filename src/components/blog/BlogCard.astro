@@ -1,5 +1,5 @@
 ---
-import { Image, Picture } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 const { post, url } = Astro.props;
 ---
 
@@ -21,9 +21,8 @@ const { post, url } = Astro.props;
     <Image
       src={post.image_url}
       width={400}
-      aspectRatio="16:9"
+      height={300}
       alt={post.title}
-      format="avif"
     
     />
 </div>

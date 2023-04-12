@@ -27,6 +27,7 @@ const { data } = await sbApi.get(`cdn/stories/the-hub-new/${slug}`, {
 });
 
 const story = data.story;
+export const prerender = true
 ---
 
 <html lang="en">

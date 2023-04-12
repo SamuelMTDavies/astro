@@ -13,6 +13,7 @@ import { loadEnv } from 'vite';
 import { SITE } from './src/config.mjs';
 import alpinejs from "@astrojs/alpinejs";
 import compressor from "astro-compressor";
+import netlify from "@astrojs/netlify/functions";
 const env = loadEnv("", process.cwd(), 'STORYBLOK');
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const whenExternalScripts = (items = []) => SITE.googleAnalyticsId ? Array.isArray(items) ? items.map(item => item()) : [items()] : [];
@@ -23,9 +24,17 @@ export default defineConfig({
   site: SITE.origin,
   base: SITE.basePathname,
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',
-  output: 'static',
-  //output: 'server',
-
+  //output: 'static',
+  output: 'server',
+  adapter: netlify({
+    dist: new URL('./dist/', import.meta.url)
+  }),
+  experimental: {
+    assets: true
+  },
+  image: {
+    service: "astro/assets/services/sharp",
+  },
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin]
   },
@@ -33,9 +42,7 @@ export default defineConfig({
     config: {
       applyBaseStyles: true
     }
-  }), sitemap(), image({
-    serviceEntryPoint: '@astrojs/image/sharp'
-  }), mdx(), storyblok({
+  }), sitemap(), mdx(), storyblok({
     accessToken: env.STORYBLOK_TOKEN,
     components: {
       // Add your components here
@@ -60,12 +67,16 @@ export default defineConfig({
     js: true,
     svg: false,
     logger: 1
-  }), alpinejs(), compressor({ gzip: false, brotli: true })],
+  }), alpinejs(), compressor({
+    gzip: false,
+    brotli: true
+  })],
   vite: {
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src')
       }
     }
-  }
+  },
+  
 });

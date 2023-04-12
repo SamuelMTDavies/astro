@@ -1,5 +1,5 @@
 ---
-import { Picture } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 
 import { BLOG } from '~/config.mjs';
 import type { Post } from '~/types';
@@ -22,15 +22,13 @@ const image = await findImage(post.image);
 
 
 <div class="card card-compact w-96 bg-base-100 shadow-xl">
-  <figure><Picture
+  <figure><Image
     src={image}
     class="md:object-cover w-full md:w-auto md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
-    widths={[400, 900]}
     width={400}
     height={224}
     sizes="(max-width: 900px) 400px, 900px"
     alt={post.title}
-    aspectRatio="16:9"
     loading="lazy"
     decoding="async"
   /></figure>
@@ -50,7 +48,7 @@ const image = await findImage(post.image);
     {
       image && (
         <a href={getPermalink(post.permalink, 'post')}>
-          <Picture
+          <Image
             src={image}
             class="md:object-cover w-full md:w-auto md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
             widths={[400, 900]}
@@ -58,7 +56,6 @@ const image = await findImage(post.image);
             height={224}
             sizes="(max-width: 900px) 400px, 900px"
             alt={post.title}
-            aspectRatio="16:9"
             loading="lazy"
             decoding="async"
           />

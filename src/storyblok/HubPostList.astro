@@ -1,6 +1,7 @@
 ---
 import { storyblokEditable } from '@storyblok/astro'
 import { useStoryblokApi } from '@storyblok/astro'
+import BlogCard from '~/components/blog/BlogCard.astro'
 
 const storyblokApi = useStoryblokApi();
 
@@ -23,12 +24,7 @@ const { blok } = Astro.props
 ---
 
 <ul {...storyblokEditable(blok)}>
-  {posts.map(post => (
-    <li>
-      <time>{post.date}</time>
-      <a href={post.slug}>{post.title}</a>
-      <p>{post.description}</p>
-      <img src={post.image_url} alt="tEST IMAGE">
-    </li>
-  ))}
+  <div class="grid gap-6 row-gap-5 md:grid-cols-2 lg:grid-cols-4 -mb-6">
+    {posts.map((post) => <BlogCard post={post} />)}
+  </div>
 </ul>

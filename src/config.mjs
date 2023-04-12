@@ -1,7 +1,7 @@
 import defaultImage from './assets/images/default.png';
 
 const CONFIG = {
-  name: 'AstroWind',
+  name: 'UOWN - A Home For Your Money',
 
   origin: 'https://astrowind.vercel.app',
   basePathname: '/',
@@ -12,7 +12,7 @@ const CONFIG = {
     '🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.',
   defaultImage: defaultImage,
 
-  defaultTheme: 'system', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  defaultTheme: 'light:only', // Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
   language: 'en',
   textDirection: 'ltr',
@@ -38,7 +38,7 @@ const CONFIG = {
     },
 
     list: {
-      pathname: 'blog', // Blog main path, you can change this to "articles" (/articles)
+      pathname: 'the-hub-new', // Blog main path, you can change this to "articles" (/articles)
       noindex: false,
       disabled: false,
     },

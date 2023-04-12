@@ -3,109 +3,75 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Landing',
-      links: [
-        {
-          text: 'Sass',
-          href: getPermalink('/landing/saas'),
-        },
-        {
-          text: 'Startup',
-          href: getPermalink('/landing/startup'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/landing/mobile-app'),
-        },
-      ],
-    },
-    {
-      text: 'Pages',
-      links: [
-        {
-          text: 'Features',
-          href: '#',
-        },
-        {
-          text: 'Pricing',
-          href: '#',
-        },
-        {
-          text: 'About us',
-          href: '#',
-        },
-        {
-          text: 'Contact',
-          href: '#',
-        },
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
-        },
-      ],
-    },
-    {
-      text: 'Widgets',
+      text: 'Why UOWN?',
       href: '#',
     },
     {
-      text: 'Blog',
-      href: getBlogPermalink(),
+      text: 'Learn',
+      links: [
+        {
+          text: 'The Hub',
+          href: getPermalink('/landing/saas'),
+        },
+        {
+          text: 'Help Centre',
+          href: getPermalink('/landing/startup'),
+        },
+        
+      ],
     },
+    
+      
+   
+    {
+      text: 'Invest',
+      href: '#',
+    },
+    
   ],
   actions: [
-    { type: 'button', text: 'Download', href: 'https://github.com/onwidget/astrowind' }
+    { type: 'button', text: 'Log In', href: 'https://app.uown.co/login' },
+    { type: 'button', text: 'Sign Up', href: 'https://app.uown.co/register' }
   ],
 };
   
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'Invest',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        { text: 'Retirement Investments', href: '#' },
+        { text: 'P2P Investments', href: '#' },
+
       ],
     },
     {
-      title: 'Platform',
+      title: 'Help and Resources',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
+        { text: 'Contact Us', href: '#' },
+        { text: 'Help Centre', href: '#' },
+        { text: 'The Hub', href: '#' },
+        
       ],
     },
     {
-      title: 'Support',
+      title: 'Account',
       links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
+        { text: 'Login', href: '#' },
+        { text: 'Register', href: '#' },
+
       ],
     },
     {
-      title: 'Company',
+      title: 'Legal Information',
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: 'Terms & Conditions', href: '#' },
+        { text: 'Privacy Policy', href: '#' },
+        { text: 'Cookies Policy', href: '#' },
+        { text: "Mangopay T&C's", href: '#' },
+        { text: 'Risk Statements', href: '#' },
+        { text: 'Complaints', href: '#' },
+
       ],
     },
   ],
@@ -114,14 +80,10 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/uownco' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/uownco' },
   ],
   footNote: `
-    <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 float-left rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)]"></span>
-    Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://onwidget.com/"> onWidget</a> · All rights reserved.
+   
   `,
 };

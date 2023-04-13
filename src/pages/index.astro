@@ -13,6 +13,11 @@ import LatestPosts from '~/components/blog/LatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import hero from '../assets/images/hero.png';
+import coas from '../assets/images/caos.jpg';
+import vintage from '../assets/images/vintage.jpg';
+import creativity from '../assets/images/creativity.jpg';
+
 
 const meta = {
   title: SITE.title,
@@ -27,7 +32,7 @@ const meta = {
   <Hero
     callToAction={{ text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' }}
     callToAction2={{ text: 'Learn more', href: '#features' }}
-    image={{ src: '../assets/images/hero.png', alt: 'AstroWind Hero Image' }}
+    image={{ src: hero.src, alt: 'AstroWind Hero Image' }}
   >
     <Fragment slot="title">
       Free template for <span class="hidden lg:inline">create your website <br class="2xl:hidden"/> with</span>
@@ -121,7 +126,7 @@ const meta = {
       },
     ]}
     image={{
-      src: '../assets/images/caos.jpg',
+      src: coas.src,
       alt: 'Colorful Image',
     }}
   >
@@ -158,7 +163,7 @@ const meta = {
       },
     ]}
     image={{
-      src: '../assets/images/vintage.jpg',
+      src: vintage.src,
       alt: 'Vintage Image',
     }}
   />
@@ -192,7 +197,7 @@ const meta = {
       },
     ]}
     image={{
-      src: '../assets/images/creativity.jpg',
+      src: creativity.src,
       alt: 'Steps image',
     }}
   />

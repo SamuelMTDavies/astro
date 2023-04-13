@@ -30,7 +30,7 @@ export const headerData = {
     
   ],
   actions: [
-    { type: 'text', text: 'Log In', href: 'https://app.uown.co/login' },
+    { type: 'ghost', text: 'Log In', href: 'https://app.uown.co/login' },
     { type: 'button', text: 'Sign Up', href: 'https://app.uown.co/register' }
   ],
 };

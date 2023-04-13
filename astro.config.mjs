@@ -3,7 +3,6 @@ import { fileURLToPath } from 'url';
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
-import image from '@astrojs/image';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import compress from 'astro-compress';
@@ -68,8 +67,8 @@ export default defineConfig({
     svg: false,
     logger: 1
   }), alpinejs(), compressor({
-    gzip: false,
-    brotli: true
+    gzip: true,
+    brotli: false
   })],
   vite: {
     resolve: {

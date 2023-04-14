@@ -1,0 +1,32 @@
+---
+import { SITE } from '~/config.mjs';
+import Layout from '~/layouts/PageLayout.astro';
+import type { APIContext } from 'astro';
+
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+
+const response = await fetch("https://api-edge.uown.cloud/api/v1/users/sessions.json",
+  {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({
+  email: "samuelmtdavies+2@gmail.com",
+  password: "billiard46"
+    }),
+  });
+
+
+const user = await response?.json();
+console.log(user);
+
+
+
+---
+<Layout {meta}>
+<p>{user.id}</p>
+</Layout>

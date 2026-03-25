@@ -1,10 +1,10 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
+import { Icon } from 'astro-icon/components';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 ---
 
-<Layout meta={{ title: 'Help Centre', description: 'Find answers to frequently asked questions about investing with UOWN, our platform, returns and more.' }}>
+<Layout meta={{ title: 'Help Centre | Support & FAQs', description: 'Find answers to frequently asked questions about investing with UOWN, our platform, fees, returns and more.' }}>
 
   <!-- Hero -->
   <section class="relative md:-mt-[76px]">
@@ -24,150 +24,319 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
     </div>
   </section>
 
-  <!-- Getting Started FAQs -->
-  <FAQs
-    title="Getting Started"
-    highlight="The Basics"
-    subtitle="Everything you need to know to begin your property investment journey with UOWN."
-    items={[
-      [
-        {
-          question: 'What is UOWN?',
-          answer:
-            'UOWN is a property investment platform that allows you to invest in UK property developments and buy-to-let properties. We make property investment accessible to everyone by allowing you to invest alongside other UOWNers, pooling funds to access large-scale projects that would normally be out of reach for individual investors.',
-        },
-        {
-          question: 'How much do I need to invest?',
-          answer:
-            'There is no minimum investment amount. You can invest as much or as little as you would like, from tens of pounds to hundreds of thousands. This flexibility allows you to build a diversified portfolio at your own pace.',
-        },
-        {
-          question: 'Who can invest with UOWN?',
-          answer:
-            'Anyone aged 18 or over who is a UK resident can invest with UOWN. You\'ll need to complete a simple verification process when you sign up, which typically takes just a few minutes.',
-        },
-      ],
-      [
-        {
-          question: 'Is there a fee to sign up?',
-          answer:
-            'No, signing up to UOWN is completely free. We charge a 2% fee on each investment you make on the platform. There are no hidden charges, annual fees, or exit fees.',
-        },
-        {
-          question: 'How do I create an account?',
-          answer:
-            'Simply visit <a href="https://app.uown.co/register" class="text-primary hover:underline">app.uown.co/register</a> and follow the sign-up process. You\'ll need to provide your name, email address, and complete identity verification. The whole process takes just a few minutes.',
-        },
-        {
-          question: 'Is my money safe?',
-          answer:
-            'Client funds are held in segregated accounts, separate from UOWN\'s operating funds. Many of our investments are also secured by equitable charges on the underlying property. However, please note that investments are not protected under the Financial Services Compensation Scheme (FSCS).',
-        },
-      ],
-    ]}
-  />
+  <!-- Category Quick Links -->
+  <section class="px-4 pb-8 mx-auto max-w-6xl">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+      {[
+        { label: 'Getting Started', icon: 'tabler:rocket', href: '#getting-started' },
+        { label: 'Deposits & Withdrawals', icon: 'tabler:wallet', href: '#deposits' },
+        { label: 'Fees', icon: 'tabler:receipt', href: '#fees' },
+        { label: 'Investments', icon: 'tabler:chart-line', href: '#investments' },
+        { label: 'Security', icon: 'tabler:shield-lock', href: '#security' },
+        { label: 'Tax', icon: 'tabler:file-text', href: '#tax' },
+      ].map(({ label, icon, href }) => (
+        <a href={href} class="flex flex-col items-center gap-2 p-4 rounded-xl border border-gray-100 dark:border-slate-700 hover:border-primary hover:shadow-sm transition text-center">
+          <Icon name={icon} class="w-6 h-6 text-primary" />
+          <span class="text-sm font-medium">{label}</span>
+        </a>
+      ))}
+    </div>
+  </section>
 
-  <!-- Investment FAQs -->
-  <FAQs
-    title="Investments & Returns"
-    highlight="Your Money"
-    subtitle="Learn about the different investment types, how returns work, and what to expect."
-    items={[
-      [
-        {
-          question: 'What types of investments does UOWN offer?',
-          answer:
-            '<strong>Development Projects:</strong> Invest in property developments with targeted returns of up to 25%. Your capital plus returns are paid at the end of the project term.<br/><br/><strong>Buy-to-Let Properties:</strong> Earn 6%-9% annual rental income, paid monthly on the 5th of each month, plus potential capital appreciation of 5%-7% when the property is sold.',
-        },
-        {
-          question: 'What returns can I expect?',
-          answer:
-            'Returns vary by project type. Our average profit per project across all 21 completed projects is 17.7%. Development projects typically offer higher returns over a fixed term, while buy-to-let properties provide steady monthly rental income. All returns quoted are projected estimates and not guaranteed.',
-        },
-        {
-          question: 'When do I receive my returns?',
-          answer:
-            'For buy-to-let properties, rental dividends are paid on the 5th of each month directly to your UOWN account. For development projects, your capital plus returns are paid at the end of the project term. You can withdraw funds from your account at any time.',
-        },
-      ],
-      [
-        {
-          question: 'Can I lose money?',
-          answer:
-            'Yes, as with any investment, there is a risk of loss. House prices can fall as well as rise and you may not get back all of the money you invest. Rates of return are estimates only and are not guaranteed. We encourage all investors to read our risk statements and only invest money they can afford to lose.',
-        },
-        {
-          question: 'How are projects selected?',
-          answer:
-            'Every project goes through rigorous due diligence. Our team, backed by The Parklane Group with over 45 years of group experience, examines hundreds of deals every month. We stress-test each opportunity and only bring the very best projects to the platform.',
-        },
-        {
-          question: 'Can I sell my investment early?',
-          answer:
-            'For buy-to-let properties, you may be able to sell your shares to other investors on the platform. For development projects, your capital is typically locked in until the project completes. Please check the specific terms of each investment for details.',
-        },
-      ],
-    ]}
-  />
+  <!-- FAQ Sections -->
+  <section class="px-4 py-8 mx-auto max-w-4xl">
 
-  <!-- Platform FAQs -->
-  <FAQs
-    title="About UOWN"
-    highlight="The Platform"
-    subtitle="Learn more about UOWN, our backing, and how we operate."
-    items={[
-      [
-        {
-          question: 'Who is behind UOWN?',
-          answer:
-            'UOWN is backed by The Parklane Group, a trusted name in the UK property market with over 45 years of group experience. Parklane Group owns 50% of UOWN, generates £15M+ annual turnover, and manages 2,000+ student and professional beds across the UK. UOWN was founded in 2016 in Leeds by Shaan Ahmed.',
-        },
-        {
-          question: 'What is UOWN\'s track record?',
-          answer:
-            'Since launching in 2016, UOWN has successfully delivered the projected returns on all 21 of its projects, with an average profit of 17.7% per project. Over £70 million in total project value has been handled through the platform. Visit our <a href="/track-record" class="text-primary hover:underline">Track Record page</a> for more details.',
-        },
-        {
-          question: 'How can I contact UOWN?',
-          answer:
-            'You can reach our team by email at <a href="mailto:hello@uown.co" class="text-primary hover:underline">hello@uown.co</a>. We\'re based at 3rd Floor, Northgate, 118 North Street, Leeds, LS2 7PN. Our team typically responds within one business day.',
-        },
-      ],
-      [
-        {
-          question: 'Is UOWN regulated?',
-          answer:
-            'UOWN is a trading name of U Own Exchange Limited. We operate as a property crowdfunding platform. Please note that investments made through UOWN are not protected under the Financial Services Compensation Scheme (FSCS). We are committed to transparency and compliance with all applicable regulations.',
-        },
-        {
-          question: 'What happens if UOWN ceases to operate?',
-          answer:
-            'Client funds are held in segregated accounts, meaning they are kept separate from UOWN\'s own operating funds. In the unlikely event that UOWN ceases to operate, your investments in underlying properties would continue to be managed according to the terms of each specific investment.',
-        },
-        {
-          question: 'How is UOWN different from other platforms?',
-          answer:
-            'Unlike many property platforms, every UOWN project is backed by The Parklane Group, providing institutional-grade expertise and security. Our 100% track record of delivering projected returns across 21 projects sets us apart. We also offer the flexibility of no minimum investment, letting you invest at your own pace.',
-        },
-      ],
-    ]}
-  />
+    <!-- Getting Started -->
+    <div id="getting-started" class="mb-16 scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <Icon name="tabler:rocket" class="w-7 h-7 text-primary" />
+        <h2 class="text-2xl font-bold font-heading">Getting Started</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            What is property crowdfunding?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            UOWN uses technology to help lots of people come together to invest in expertly picked property investments. Until recently investing in property required lots of cash and expertise, but each active member of the UOWN community (a "UOWNer") can invest as much as they can afford and not have to worry about the day-to-day management headaches.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            How does it work?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            You either buy a share in a project or loan money to a developer alongside other people, which entitles you to a share of the potential profits or a set return from that company. UOWN is a crowdfunding platform which offers "co-own" investment opportunities, giving investors the opportunity to purchase shares in and "co-own" properties.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            Why do I own shares?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            Because of limits to the number of people you can have on a title deed, each house is owned by a specific UK limited company (the SPV &mdash; Special Purpose Vehicle). This company is beneficially owned by investors. When you invest you will receive a share of the returns from the SPV every month, in direct proportion to your ownership of the SPV.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            Who can invest?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            Anyone aged 18 or over who is a UK resident can invest with UOWN. You'll need to complete a simple verification process when you sign up, which typically takes just a few minutes.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            Why do I have to verify my identity?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            To comply with Anti-Money Laundering (AML) regulations and protect our investors, we are required to verify the identity of all users. This process is handled by industry-leading KYC (Know Your Customer) partners and is completed quickly during sign-up.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            The importance of diversification
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            Diversification means spreading your investments across different projects and property types to manage risk. Rather than putting all your money into one property, you can invest smaller amounts across several projects. This way, if one investment underperforms, the impact on your overall portfolio is reduced.
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Deposits, Funding & Withdrawals -->
+    <div id="deposits" class="mb-16 scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <Icon name="tabler:wallet" class="w-7 h-7 text-primary" />
+        <h2 class="text-2xl font-bold font-heading">Deposits, Funding & Withdrawals</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            What is "Available Balance"?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            Available Balance is money in your UOWN wallet. UOWN operates a wallet system so when you top up funds, receive rent, or sell shares, the money goes into your UOWN wallet. You can then withdraw these funds to your bank account or reinvest them into another property or development. Money in your UOWN wallet IS NOT invested.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            How do I deposit money?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            Deposits can be made by bank transfer from a UK bank, or by debit card. A direct debit can also be set up to take regular monthly payments from your bank account. Bank deposits typically show up the same or next working day; debit card transactions are credited immediately. UOWN does not charge any fees to top up your wallet.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            How do I get paid?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            You receive a share of the net rental income for a property in proportion to your percentage share ownership. Net rental income is calculated by taking the actual amount of rent received (gross rental income) and deducting the various fees or costs such as maintenance or management fees. Rent payments are calculated on a pro-rata basis. Your share of the rental income is paid as a dividend on the 5th of each month. Money received in rent or from shares sold is deposited into your UOWN wallet, where you can choose to re-invest or withdraw.
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Fees -->
+    <div id="fees" class="mb-16 scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <Icon name="tabler:receipt" class="w-7 h-7 text-primary" />
+        <h2 class="text-2xl font-bold font-heading">Fees</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            What are the fees?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            UOWN has one main fee: a 2% transaction fee charged when you invest into any property on UOWN. For example, if you invest &pound;50 you will be charged a fee of &pound;1. There are no hidden charges, annual fees, or exit fees.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            Who pays the property management fees?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            The properties are managed by third-party management agents who charge a 10% + VAT fee on rental payments. This means you don't have to worry about the day-to-day hassle of being a landlord. The management fees, as well as other costs and tax, are taken out of the rent before the net rent figure is calculated. Management costs are shared fairly amongst the people who own shares in a property.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            What is stamp duty?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            Stamp Duty Land Tax (SDLT) is an obligatory amount payable to HM Revenue &amp; Customs upon the purchase of property or land in the UK. When investing with UOWN, SDLT is classed as an initial purchase cost and is therefore included in the share price you pay. Other similar costs include legal and professional costs, repairs provision and pre-let expenses &mdash; all taken care of when you buy shares.
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Investments -->
+    <div id="investments" class="mb-16 scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <Icon name="tabler:chart-line" class="w-7 h-7 text-primary" />
+        <h2 class="text-2xl font-bold font-heading">Investments</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            What kind of properties can I invest in?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            UOWN offers two main types of investments. <strong>Development projects</strong> offer targeted returns of up to 25%, with capital and returns paid at the end of the project. <strong>Buy-to-let properties</strong> offer 6-9% annual rental income paid monthly, plus potential capital appreciation when the property is sold. We also feature student accommodation, aparthotels and build-to-rent developments.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            What is rental yield?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            In simple terms, rental yield is the income you are making, or expect to make, on a property you own or are thinking about purchasing. In the case of investing with UOWN, rental yield is the income from rent that is shared between the investors. Property investors and landlords use rental yield as a fundamental metric to monitor the value of their property investments.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            Can I change my mind after investing?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            For "Easy Exit" investment types, UOWN guarantees to buy back your shares at the current share price, minus a fee of 3% of the value of the shares. UOWN will buy back your shares at any time (including while a deal is still funding) and you will typically have access to your money within three working days. For other investment types, you may be able to sell your shares on the secondary resale market.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            What is 3rd party sign off?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            As work progresses during a development it must be signed off by independent 3rd parties. UOWN ensures that the contractor submits to these independent reviews of site progress. Following 3rd party validation, the contractor is paid for the value of the work achieved by that date of inspection.
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            What are multiple exit opportunities?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            Some developments will be built to either sell as a block to institutional investors or as individual units to owner occupiers. In the future, UOWN may also look to list a unit from a development on the platform, providing additional flexibility for investors.
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Security -->
+    <div id="security" class="mb-16 scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <Icon name="tabler:shield-lock" class="w-7 h-7 text-primary" />
+        <h2 class="text-2xl font-bold font-heading">Security</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            Is my money protected?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            Client funds are held in segregated accounts, separate from UOWN's operating funds. UOWN prioritises cyber security and has its platform rigorously tested by independent security experts. We work closely with partners and rely on industry-leading third parties for KYC checks and payment security. However, please note that investments are <strong>not</strong> protected under the Financial Services Compensation Scheme (FSCS).
+          </div>
+        </details>
+
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            What do you do to protect against money laundering?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            We use industry-leading identity verification (KYC) partners to check the identity of all investors during sign-up. This is a legal requirement under Anti-Money Laundering (AML) regulations and helps protect both you and the platform. All deposits must come from a UK bank account in the investor's name.
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Tax -->
+    <div id="tax" class="mb-16 scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <Icon name="tabler:file-text" class="w-7 h-7 text-primary" />
+        <h2 class="text-2xl font-bold font-heading">Tax</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="group border border-gray-200 dark:border-slate-700 rounded-xl">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-medium text-lg">
+            Do I have to pay tax on my returns?
+            <Icon name="tabler:chevron-down" class="w-5 h-5 text-muted transition-transform group-open:rotate-180" />
+          </summary>
+          <div class="px-5 pb-5 text-muted dark:text-slate-400">
+            Whether you have to pay tax depends on your individual circumstances. The returns paid to you will already have been deducted of corporation tax. After that, you must declare your returns and that may make you liable for capital gains tax. UOWN cannot give individual tax advice and recommends that you seek advice from a professional. Ongoing costs deducted from monthly rent include: management fee, insurance, maintenance, SPV charge, vacant property allowance, and corporation tax.
+          </div>
+        </details>
+      </div>
+    </div>
+
+  </section>
 
   <!-- Contact Section -->
   <section class="bg-blue-50 dark:bg-slate-800 py-16 md:py-20">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold font-heading mb-4">Still have questions?</h2>
       <p class="text-xl text-muted dark:text-slate-400 mb-8">
-        Our team is here to help. Get in touch and we'll get back to you within one business day.
+        Our team is here to help. Get in touch and we'll get back to you as soon as possible.
       </p>
+      <div class="grid sm:grid-cols-2 gap-6 max-w-lg mx-auto mb-8">
+        <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm">
+          <Icon name="tabler:mail" class="w-8 h-8 text-primary mx-auto mb-2" />
+          <p class="font-bold">Email</p>
+          <a href="mailto:hello@uown.co" class="text-primary hover:underline text-sm">hello@uown.co</a>
+        </div>
+        <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm">
+          <Icon name="tabler:phone" class="w-8 h-8 text-primary mx-auto mb-2" />
+          <p class="font-bold">Phone</p>
+          <a href="tel:03330507875" class="text-primary hover:underline text-sm">0333 050 7875</a>
+        </div>
+      </div>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="mailto:hello@uown.co" class="btn btn-primary">
-          Email Us
-        </a>
-        <a href="https://app.uown.co/register" class="btn">
-          Create Account
-        </a>
+        <a href="mailto:hello@uown.co" class="btn btn-primary">Contact Us</a>
+        <a href="https://app.uown.co/register" class="btn">Create Account</a>
       </div>
     </div>
   </section>
 </Layout>
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  details[open] summary {
+    border-bottom: 1px solid rgb(229 231 235);
+  }
+  :global(.dark) details[open] summary {
+    border-bottom-color: rgb(51 65 85);
+  }
+</style>

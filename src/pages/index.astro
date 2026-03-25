@@ -2,272 +2,197 @@
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
-import LatestPosts from '~/components/blog/LatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Content from '~/components/widgets/Content.astro';
+import LatestPosts from '~/components/blog/LatestPosts.astro';
 
 const meta = {
-  title: SITE.title,
-  description: SITE.description,
+  title: 'UOWN - A Home For Your Money | Property Investment Made Simple',
+  description: 'Invest in UK property from just £1. UOWN makes property investment accessible to everyone with proven returns and expert-backed projects.',
   dontUseTitleTemplate: true,
 };
 ---
 
 <Layout {meta}>
-  <!-- Hero Widget ******************* -->
 
-  <Hero
-    callToAction={{ text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' }}
-    callToAction2={{ text: 'Learn more', href: '#features' }}
-    image={{ src: import('~/assets/images/hero.png'), alt: 'AstroWind Hero Image' }}
+  <!-- Hero -->
+  <Hero2
+    callToAction={{ text: 'Start Investing', href: 'https://app.uown.co/register', icon: 'tabler:arrow-right' }}
+    callToAction2={{ text: 'How It Works', href: '/how-it-works' }}
+    image={{ src: import('~/assets/images/hero.png'), alt: 'UOWN Property Investment Platform' }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden lg:inline">create your website <br class="2xl:hidden"/> with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 2.0</span> + Tailwind CSS
+      A Home For <span class="text-primary">Your Money</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 2.0 +
-        Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> Suitable for Startups,
-      Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.
+      Invest in UK property developments and earn potential returns of up to 25%.
+      UOWN makes property investment accessible to everyone, backed by The Parklane Group with over 45 years of experience.
     </Fragment>
-  </Hero>
+  </Hero2>
 
-  <!-- Note Widget ******************* -->
+  <!-- Key Stats -->
+  <Stats
+    items={[
+      { name: 'Avg. Profit Per Project', value: '17.7%' },
+      { name: 'Projects Delivered', value: '21' },
+      { name: 'Platform Users', value: '16,000+' },
+      { name: 'Trustpilot Rating', value: '4.9/5' },
+    ]}
+  />
 
-  <Note />
-
-  <!-- Features Widget *************** -->
-
+  <!-- Why UOWN -->
   <Features
-    highlight="Features"
-    title="What you get with AstroWind"
-    subtitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae."
+    highlight="Why UOWN?"
+    title="Property investment, reimagined"
+    subtitle="We examine hundreds of deals every month to bring only the best projects to our platform."
     items={[
       [
         {
-          title: 'Astro + Tailwind CSS Integration',
+          title: 'Accessible to Everyone',
           description:
-            'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-          icon: 'tabler:brand-tailwind',
+            'Start investing in UK property with as little as you like. No large deposits, no mortgages, no hassle.',
+          icon: 'tabler:door-enter',
         },
         {
-          title: 'Ready-to-use Components',
+          title: 'Expert-Backed Projects',
           description:
-            'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-          icon: 'tabler:components',
+            'Every project is backed by The Parklane Group, with over 45 years of group experience in the UK property market.',
+          icon: 'tabler:shield-check',
         },
         {
-          title: 'Best Practices',
+          title: 'Proven Returns',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
-          icon: 'tabler:list-check',
+            'An average of 17.7% profit per project. All 21 projects delivered on target since our launch in 2016.',
+          icon: 'tabler:trending-up',
         },
       ],
       [
         {
-          title: 'Excellent Page Speed',
+          title: 'Diversified Portfolio',
           description:
-            'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-          icon: 'tabler:rocket',
+            'Spread your investment across multiple projects and property types to manage risk and maximise potential returns.',
+          icon: 'tabler:chart-pie',
         },
         {
-          title: 'Search Engine Optimization (SEO)',
+          title: 'Power of the Crowd',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
-          icon: 'tabler:arrows-right-left',
+            'Join forces with fellow UOWNers to access large-scale projects and returns usually reserved for institutional investors.',
+          icon: 'tabler:users-group',
         },
         {
-          title: 'Open to new ideas and contributions',
+          title: 'Full Transparency',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
-          icon: 'tabler:bulb',
+            'Track your investments in real time through our platform. Regular updates on every project, every step of the way.',
+          icon: 'tabler:eye',
         },
       ],
     ]}
   />
 
-  <!-- Content Widget **************** -->
-
-  <Content
-    highlight="Inside template"
-    title="And what's inside? ..."
-    items={[
-      {
-        title: 'Per ei quaeque sensibus',
-        description:
-          'Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-        description:
-          'Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-        description:
-          'At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.',
-      },
-    ]}
-    image={{
-      src: import('~/assets/images/caos.jpg'),
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Ad vix debet docendi</h3>
-      Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod
-      tacimates.
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Per ei quaeque sensibus',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-      },
-      {
-        title: 'Per ei quaeque sensibus',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-      },
-    ]}
-    image={{
-      src: import('~/assets/images/vintage.jpg'),
-      alt: 'Vintage Image',
-    }}
-  />
-
-  <!-- Steps Widget ****************** -->
-
+  <!-- How It Works Preview -->
   <Steps
-    title="Get your dream website up and running in no time with AstroWind."
+    title="How it works"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Download</span>',
+        title: 'Step 1: <span class="font-medium">Sign Up</span>',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula.',
-        icon: 'tabler:package',
+          'Create your free UOWN account in minutes. No commitment required, just sign up and start exploring investment opportunities.',
+        icon: 'tabler:user-plus',
       },
       {
-        title: 'Step 2: <span class="font-medium">Add content</em>',
+        title: 'Step 2: <span class="font-medium">Choose a Project</span>',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.',
-        icon: 'tabler:letter-case',
+          'Browse our curated selection of property projects. Each one is backed by The Parklane Group and thoroughly vetted by our team.',
+        icon: 'tabler:building',
       },
       {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        title: 'Step 3: <span class="font-medium">Invest</span>',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula. Fusce sit amet dui tellus.',
-        icon: 'tabler:paint',
+          'Invest the amount that suits you. Whether it\'s tens of pounds or hundreds of thousands, every investment counts.',
+        icon: 'tabler:coin',
       },
       {
-        title: 'Ready!',
-        icon: 'tabler:check',
+        title: 'Earn returns!',
+        icon: 'tabler:chart-line',
       },
     ]}
     image={{
       src: import('~/assets/images/creativity.jpg'),
-      alt: 'Steps image',
+      alt: 'UOWN Investment Process',
     }}
   />
 
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    highlight="Components"
+  <!-- Investment Types -->
+  <Content
+    highlight="Investment Types"
+    title="Two ways to invest"
     items={[
       {
-        title: 'Headers',
+        title: 'Development Projects',
         description:
-          'In general, Headers contain information that makes it easier for visitors to interact with the website.',
-        icon: 'flat-color-icons:template',
+          'Targeted returns of up to 25%. Your capital plus returns are paid at the end of the project term.',
       },
       {
-        title: 'Heros',
+        title: 'Buy-to-Let Properties',
         description:
-          'If you want your website to get more than its fair share of visitors, the Hero section needs to be stellar.',
-        icon: 'flat-color-icons:gallery',
+          'Earn 6%-9% annual rental income paid monthly, plus 5%-7% capital appreciation when the property is sold.',
       },
       {
-        title: 'Features',
+        title: 'Secured Investments',
         description:
-          'Display your product in action and how the Features actually create a solution for your target customer.',
-        icon: 'flat-color-icons:todo-list',
+          'Many of our investments are secured by equitable charges on the underlying property, giving you added protection.',
+      },
+    ]}
+    image={{
+      src: import('~/assets/images/caos.jpg'),
+      alt: 'Investment Types',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Built on experience</h3>
+      Built upon a foundation of tireless analysis, stress testing and time-served sector experience, we examine hundreds of deals
+      every month to bring only the best projects to our platform.
+    </Fragment>
+  </Content>
+
+  <!-- Social Proof -->
+  <Features2
+    title="What our investors say"
+    subtitle="Don't just take our word for it. 8 out of 10 users go on to make multiple investments."
+    highlight="Testimonials"
+    items={[
+      {
+        title: '"Never let me down"',
+        description:
+          'I have been investing with UOWN for several years now and they have never let me down. I have had good returns on my investments in line with what was projected.',
+        icon: 'tabler:star',
       },
       {
-        title: 'Content',
+        title: '"The only one that delivered"',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:document',
+          'I have trial investments with seven property crowdfunding platforms. UOWN is the only one that has delivered on time and on budget.',
+        icon: 'tabler:trophy',
       },
       {
-        title: 'Call-to-Action',
+        title: '"Transparent and reliable"',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'icon-park:page-template',
+          'Great platform with regular updates. The team are responsive and always happy to answer questions. Highly recommended.',
+        icon: 'tabler:message-circle',
       },
     ]}
   />
 
-  <!-- HighlightedPosts Widget ******* -->
-
+  <!-- Latest from The Hub -->
   <LatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-			Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-			Astro is a very interesting technology. Thanks.
-		`}
+    title="Latest from The Hub"
+    information="Stay up to date with property market insights, investment tips, and UOWN news."
     postIds={[
       'get-started-website-with-astro-tailwind-css.md',
       'how-to-customize-astrowind-to-your-brand.md',
@@ -276,77 +201,21 @@ const meta = {
     ]}
   />
 
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque. Morbi tincidunt lacus nec tortor scelerisque pulvinar."
-    highlight="FAQs"
-    items={[
-      [
-        {
-          question: 'What do I need to start?',
-          answer:
-            'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-        },
-        {
-          question: 'How to install the Astro + Tailwind CSS template?',
-          answer:
-            "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.",
-        },
-        {
-          question: "What's something that you don't understand?",
-          answer:
-            "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-        },
-      ],
-      [
-        {
-          question: "What's an example of when you changed your mind?",
-          answer:
-            "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-        },
-        {
-          question: 'What is something that you would like to try again?',
-          answer:
-            "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-        },
-        {
-          question: 'If you could only ask one question to each person you meet, what would that question be?',
-          answer:
-            "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
-        },
-      ],
-    ]}
-  />
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    items={[
-      { name: 'Downloads', value: '132K' },
-      { name: 'Stars', value: '24.8K' },
-      { name: 'Forks', value: '10.3K' },
-      { name: 'Users', value: '48.4K' },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
+  <!-- CTA -->
   <CallToAction
     callToAction={{
-      text: 'Get template',
-      href: 'https://github.com/onwidget/astrowind',
-      icon: 'tabler:download',
+      text: 'Start Investing Today',
+      href: 'https://app.uown.co/register',
+      icon: 'tabler:arrow-right',
     }}
   >
     <Fragment slot="title">
-      Astro + <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+      Ready to become a <span class="sm:whitespace-nowrap">property investor?</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      Join 16,000+ UOWNers already investing in UK property.
+      Sign up for free and explore our current opportunities.
     </Fragment>
   </CallToAction>
 </Layout>

@@ -1,0 +1,223 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+---
+
+<Layout meta={{ title: 'Track Record', description: 'UOWN has successfully delivered projected returns on all projects since 2016.' }}>
+
+  <!-- Hero -->
+  <section class="relative md:-mt-[76px]">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="pt-0 md:pt-[76px]"></div>
+      <div class="py-12 md:py-20">
+        <div class="text-center max-w-4xl mx-auto">
+          <p class="text-base text-primary font-semibold tracking-wide uppercase mb-2">Proven Performance</p>
+          <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+            Our Track Record
+          </h1>
+          <p class="text-xl text-muted dark:text-slate-400 max-w-3xl mx-auto">
+            UOWN has successfully delivered the projected returns on all 21 of its projects since we launched in 2016.
+            Using the power of the crowd, we acquire, develop and operate properties around the UK.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Stats -->
+  <Stats
+    items={[
+      { name: 'Avg. Profit Per Project', value: '17.7%' },
+      { name: 'Projects Delivered On Target', value: '21' },
+      { name: 'Total Project Value', value: '£70M+' },
+      { name: 'Trustpilot Rating', value: '4.9/5' },
+    ]}
+  />
+
+  <!-- Featured Projects -->
+  <section class="px-4 py-16 mx-auto max-w-6xl lg:py-20">
+    <div class="max-w-xl sm:mx-auto lg:max-w-2xl mb-12">
+      <div class="max-w-xl md:mx-auto text-center">
+        <p class="text-base text-primary font-semibold tracking-wide uppercase">Completed Projects</p>
+        <h2 class="text-3xl font-bold leading-none tracking-tight sm:text-4xl font-heading mt-2 mb-4">
+          Featured Investments
+        </h2>
+        <p class="text-xl text-muted dark:text-slate-400">
+          A selection of our successfully completed projects, delivered on time and on target.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Project Card: Wicker Island -->
+      <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden border border-gray-100 dark:border-slate-700">
+        <div class="bg-primary/10 dark:bg-primary/20 px-6 py-4">
+          <span class="text-sm font-semibold text-primary uppercase tracking-wider">Development</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Wicker Island, Sheffield</h3>
+          <p class="text-muted dark:text-slate-400 text-sm mb-4">
+            Our largest raise to date. £1 million invested in just one month, with £456k raised in a single week.
+          </p>
+          <div class="grid grid-cols-2 gap-4 mt-4">
+            <div>
+              <p class="text-2xl font-bold text-primary">£1M+</p>
+              <p class="text-xs text-muted uppercase">Raised</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-primary">12%</p>
+              <p class="text-xs text-muted uppercase">Returns p.a.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card: Wicker Island 2 -->
+      <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden border border-gray-100 dark:border-slate-700">
+        <div class="bg-primary/10 dark:bg-primary/20 px-6 py-4">
+          <span class="text-sm font-semibold text-primary uppercase tracking-wider">Development</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Wicker Island 2, Sheffield</h3>
+          <p class="text-muted dark:text-slate-400 text-sm mb-4">
+            Second tranche of the Wicker Island development. Secured via equitable charge with strong projected returns.
+          </p>
+          <div class="grid grid-cols-2 gap-4 mt-4">
+            <div>
+              <p class="text-2xl font-bold text-primary">£500K</p>
+              <p class="text-xs text-muted uppercase">Raised</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-primary">26%</p>
+              <p class="text-xs text-muted uppercase">Projected Return</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card: Roomzzz Glasgow -->
+      <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden border border-gray-100 dark:border-slate-700">
+        <div class="bg-primary/10 dark:bg-primary/20 px-6 py-4">
+          <span class="text-sm font-semibold text-primary uppercase tracking-wider">Aparthotel</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Roomzzz Glasgow</h3>
+          <p class="text-muted dark:text-slate-400 text-sm mb-4">
+            10% p.a. with monthly payments over a 30-month term. Backed by a corporate guarantee from Roomzzz.
+          </p>
+          <div class="grid grid-cols-2 gap-4 mt-4">
+            <div>
+              <p class="text-2xl font-bold text-primary">£750K</p>
+              <p class="text-xs text-muted uppercase">Raised</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-primary">25%</p>
+              <p class="text-xs text-muted uppercase">Total Return</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card: Student Properties Leeds -->
+      <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden border border-gray-100 dark:border-slate-700">
+        <div class="bg-primary/10 dark:bg-primary/20 px-6 py-4">
+          <span class="text-sm font-semibold text-primary uppercase tracking-wider">Buy-to-Let</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Student Properties, Leeds</h3>
+          <p class="text-muted dark:text-slate-400 text-sm mb-4">
+            A range of 4-bed semis to 7-bed terraces in established student areas. Managed by award-winning Parklane Properties.
+          </p>
+          <div class="grid grid-cols-2 gap-4 mt-4">
+            <div>
+              <p class="text-2xl font-bold text-primary">6-9%</p>
+              <p class="text-xs text-muted uppercase">Rental Yield</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-primary">Monthly</p>
+              <p class="text-xs text-muted uppercase">Dividend</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card: Wicker Island BTR -->
+      <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden border border-gray-100 dark:border-slate-700">
+        <div class="bg-primary/10 dark:bg-primary/20 px-6 py-4">
+          <span class="text-sm font-semibold text-primary uppercase tracking-wider">Build-to-Rent</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Wicker Island BTR, Sheffield</h3>
+          <p class="text-muted dark:text-slate-400 text-sm mb-4">
+            Riverside development featuring 101 apartments including studio, 1-bed and 2-bed units. Exit via refinance.
+          </p>
+          <div class="grid grid-cols-2 gap-4 mt-4">
+            <div>
+              <p class="text-2xl font-bold text-primary">101</p>
+              <p class="text-xs text-muted uppercase">Apartments</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-primary">Q2 2026</p>
+              <p class="text-xs text-muted uppercase">Projected Exit</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backed by Parklane -->
+      <div class="bg-primary/5 dark:bg-primary/10 rounded-xl shadow-md overflow-hidden border border-primary/20 flex flex-col justify-center">
+        <div class="p-6 text-center">
+          <div class="text-primary mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Backed by Parklane Group</h3>
+          <p class="text-muted dark:text-slate-400 text-sm">
+            Over 45 years of group experience. Managing 2,000+ student and professional beds across the UK with £15M+ annual turnover.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investor Satisfaction -->
+  <section class="bg-blue-50 dark:bg-slate-800 py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold font-heading mb-8">Investor Satisfaction</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <p class="text-5xl font-bold text-primary mb-2">4.9</p>
+          <p class="text-muted">Trustpilot Rating</p>
+          <p class="text-sm text-muted mt-1">Based on 100+ reviews</p>
+        </div>
+        <div>
+          <p class="text-5xl font-bold text-primary mb-2">4.8</p>
+          <p class="text-muted">Investor Satisfaction</p>
+          <p class="text-sm text-muted mt-1">Out of 5.0</p>
+        </div>
+        <div>
+          <p class="text-5xl font-bold text-primary mb-2">8/10</p>
+          <p class="text-muted">Repeat Investors</p>
+          <p class="text-sm text-muted mt-1">Go on to invest again</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CallToAction
+    callToAction={{
+      text: 'View Current Opportunities',
+      href: 'https://app.uown.co/properties',
+      icon: 'tabler:arrow-right',
+    }}
+  >
+    <Fragment slot="title">
+      Invest with <span class="sm:whitespace-nowrap">confidence</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Join 16,000+ investors and start building your property portfolio today.
+    </Fragment>
+  </CallToAction>
+</Layout>

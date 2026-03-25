@@ -1,0 +1,173 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+---
+
+<Layout meta={{ title: 'Help Centre', description: 'Find answers to frequently asked questions about investing with UOWN, our platform, returns and more.' }}>
+
+  <!-- Hero -->
+  <section class="relative md:-mt-[76px]">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="pt-0 md:pt-[76px]"></div>
+      <div class="py-12 md:py-20">
+        <div class="text-center max-w-4xl mx-auto">
+          <p class="text-base text-primary font-semibold tracking-wide uppercase mb-2">Support</p>
+          <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+            Help Centre
+          </h1>
+          <p class="text-xl text-muted dark:text-slate-400 max-w-3xl mx-auto">
+            Got questions? We've got answers. Find everything you need to know about investing with UOWN below.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Started FAQs -->
+  <FAQs
+    title="Getting Started"
+    highlight="The Basics"
+    subtitle="Everything you need to know to begin your property investment journey with UOWN."
+    items={[
+      [
+        {
+          question: 'What is UOWN?',
+          answer:
+            'UOWN is a property investment platform that allows you to invest in UK property developments and buy-to-let properties. We make property investment accessible to everyone by allowing you to invest alongside other UOWNers, pooling funds to access large-scale projects that would normally be out of reach for individual investors.',
+        },
+        {
+          question: 'How much do I need to invest?',
+          answer:
+            'There is no minimum investment amount. You can invest as much or as little as you would like, from tens of pounds to hundreds of thousands. This flexibility allows you to build a diversified portfolio at your own pace.',
+        },
+        {
+          question: 'Who can invest with UOWN?',
+          answer:
+            'Anyone aged 18 or over who is a UK resident can invest with UOWN. You\'ll need to complete a simple verification process when you sign up, which typically takes just a few minutes.',
+        },
+      ],
+      [
+        {
+          question: 'Is there a fee to sign up?',
+          answer:
+            'No, signing up to UOWN is completely free. We charge a 2% fee on each investment you make on the platform. There are no hidden charges, annual fees, or exit fees.',
+        },
+        {
+          question: 'How do I create an account?',
+          answer:
+            'Simply visit <a href="https://app.uown.co/register" class="text-primary hover:underline">app.uown.co/register</a> and follow the sign-up process. You\'ll need to provide your name, email address, and complete identity verification. The whole process takes just a few minutes.',
+        },
+        {
+          question: 'Is my money safe?',
+          answer:
+            'Client funds are held in segregated accounts, separate from UOWN\'s operating funds. Many of our investments are also secured by equitable charges on the underlying property. However, please note that investments are not protected under the Financial Services Compensation Scheme (FSCS).',
+        },
+      ],
+    ]}
+  />
+
+  <!-- Investment FAQs -->
+  <FAQs
+    title="Investments & Returns"
+    highlight="Your Money"
+    subtitle="Learn about the different investment types, how returns work, and what to expect."
+    items={[
+      [
+        {
+          question: 'What types of investments does UOWN offer?',
+          answer:
+            '<strong>Development Projects:</strong> Invest in property developments with targeted returns of up to 25%. Your capital plus returns are paid at the end of the project term.<br/><br/><strong>Buy-to-Let Properties:</strong> Earn 6%-9% annual rental income, paid monthly on the 5th of each month, plus potential capital appreciation of 5%-7% when the property is sold.',
+        },
+        {
+          question: 'What returns can I expect?',
+          answer:
+            'Returns vary by project type. Our average profit per project across all 21 completed projects is 17.7%. Development projects typically offer higher returns over a fixed term, while buy-to-let properties provide steady monthly rental income. All returns quoted are projected estimates and not guaranteed.',
+        },
+        {
+          question: 'When do I receive my returns?',
+          answer:
+            'For buy-to-let properties, rental dividends are paid on the 5th of each month directly to your UOWN account. For development projects, your capital plus returns are paid at the end of the project term. You can withdraw funds from your account at any time.',
+        },
+      ],
+      [
+        {
+          question: 'Can I lose money?',
+          answer:
+            'Yes, as with any investment, there is a risk of loss. House prices can fall as well as rise and you may not get back all of the money you invest. Rates of return are estimates only and are not guaranteed. We encourage all investors to read our risk statements and only invest money they can afford to lose.',
+        },
+        {
+          question: 'How are projects selected?',
+          answer:
+            'Every project goes through rigorous due diligence. Our team, backed by The Parklane Group with over 45 years of group experience, examines hundreds of deals every month. We stress-test each opportunity and only bring the very best projects to the platform.',
+        },
+        {
+          question: 'Can I sell my investment early?',
+          answer:
+            'For buy-to-let properties, you may be able to sell your shares to other investors on the platform. For development projects, your capital is typically locked in until the project completes. Please check the specific terms of each investment for details.',
+        },
+      ],
+    ]}
+  />
+
+  <!-- Platform FAQs -->
+  <FAQs
+    title="About UOWN"
+    highlight="The Platform"
+    subtitle="Learn more about UOWN, our backing, and how we operate."
+    items={[
+      [
+        {
+          question: 'Who is behind UOWN?',
+          answer:
+            'UOWN is backed by The Parklane Group, a trusted name in the UK property market with over 45 years of group experience. Parklane Group owns 50% of UOWN, generates £15M+ annual turnover, and manages 2,000+ student and professional beds across the UK. UOWN was founded in 2016 in Leeds by Shaan Ahmed.',
+        },
+        {
+          question: 'What is UOWN\'s track record?',
+          answer:
+            'Since launching in 2016, UOWN has successfully delivered the projected returns on all 21 of its projects, with an average profit of 17.7% per project. Over £70 million in total project value has been handled through the platform. Visit our <a href="/track-record" class="text-primary hover:underline">Track Record page</a> for more details.',
+        },
+        {
+          question: 'How can I contact UOWN?',
+          answer:
+            'You can reach our team by email at <a href="mailto:hello@uown.co" class="text-primary hover:underline">hello@uown.co</a>. We\'re based at 3rd Floor, Northgate, 118 North Street, Leeds, LS2 7PN. Our team typically responds within one business day.',
+        },
+      ],
+      [
+        {
+          question: 'Is UOWN regulated?',
+          answer:
+            'UOWN is a trading name of U Own Exchange Limited. We operate as a property crowdfunding platform. Please note that investments made through UOWN are not protected under the Financial Services Compensation Scheme (FSCS). We are committed to transparency and compliance with all applicable regulations.',
+        },
+        {
+          question: 'What happens if UOWN ceases to operate?',
+          answer:
+            'Client funds are held in segregated accounts, meaning they are kept separate from UOWN\'s own operating funds. In the unlikely event that UOWN ceases to operate, your investments in underlying properties would continue to be managed according to the terms of each specific investment.',
+        },
+        {
+          question: 'How is UOWN different from other platforms?',
+          answer:
+            'Unlike many property platforms, every UOWN project is backed by The Parklane Group, providing institutional-grade expertise and security. Our 100% track record of delivering projected returns across 21 projects sets us apart. We also offer the flexibility of no minimum investment, letting you invest at your own pace.',
+        },
+      ],
+    ]}
+  />
+
+  <!-- Contact Section -->
+  <section class="bg-blue-50 dark:bg-slate-800 py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold font-heading mb-4">Still have questions?</h2>
+      <p class="text-xl text-muted dark:text-slate-400 mb-8">
+        Our team is here to help. Get in touch and we'll get back to you within one business day.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:hello@uown.co" class="btn btn-primary">
+          Email Us
+        </a>
+        <a href="https://app.uown.co/register" class="btn">
+          Create Account
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

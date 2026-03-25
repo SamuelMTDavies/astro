@@ -1,13 +1,25 @@
 ---
-import { useStoryblokApi } from '@storyblok/astro'
-import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
-
-const storyblokApi = useStoryblokApi()
-
-const { data } = await storyblokApi.get("cdn/stories/the-hub-new/test-post", {
-  version: import.meta.env.DEV ? "draft" : "published",
-});
-
-const content = data.story.content;
+let content = null;
+try {
+  const { useStoryblokApi } = await import('@storyblok/astro');
+  const storyblokApi = useStoryblokApi();
+  const { data } = await storyblokApi.get("cdn/stories/the-hub-new/test-post", {
+    version: import.meta.env.DEV ? "draft" : "published",
+  });
+  content = data.story.content;
+} catch (e) {
+  // Storyblok not configured
+}
 ---
-<StoryblokComponent blok={content} />
+<html lang="en">
+  <head>
+    <title>Test Post</title>
+  </head>
+  <body>
+    {content ? (
+      <p>Storyblok content loaded.</p>
+    ) : (
+      <p>Storyblok is not configured. Set STORYBLOK_TOKEN to enable this page.</p>
+    )}
+  </body>
+</html>

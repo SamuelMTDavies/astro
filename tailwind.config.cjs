@@ -16,7 +16,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'),require("daisyui"),require('@tailwindcss/line-clamp')],
+  plugins: [require('@tailwindcss/typography'),require("daisyui")],
   darkMode: 'class',
   daisyui: {
     styled: true,

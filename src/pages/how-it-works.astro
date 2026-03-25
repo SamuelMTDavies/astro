@@ -1,11 +1,12 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Stats from '~/components/widgets/Stats.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { Icon } from 'astro-icon/components';
 ---
 
-<Layout meta={{ title: 'How It Works', description: 'Learn how UOWN makes property investment accessible to everyone. Sign up, choose a project, invest and earn returns.' }}>
+<Layout meta={{ title: 'How It Works | Property Crowdfunding & Investment', description: 'Discover how UOWN\'s property crowdfunding platform works. Invest in property deals and grow your wealth from as little as you like.' }}>
 
   <!-- Hero -->
   <section class="relative md:-mt-[76px]">
@@ -18,188 +19,290 @@ import { Icon } from 'astro-icon/components';
             How UOWN Works
           </h1>
           <p class="text-xl text-muted dark:text-slate-400 max-w-3xl mx-auto">
-            Property investment made simple. No large deposits, no mortgages, no hassle.
-            Invest in expertly selected UK property projects and earn potential returns.
+            Maximise your money's potential by investing as little or as much as you like.
+            Invest any amount, anytime and watch your earnings grow.
           </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://app.uown.co/register" class="btn btn-primary">Start Investing</a>
+            <a href="/track-record" class="btn">View Track Record</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Steps -->
+  <!-- 4-Step Investor Process -->
+  <section class="bg-blue-50 dark:bg-slate-800 px-4 py-16 mx-auto lg:py-20">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-base text-primary font-semibold tracking-wide uppercase">Your Journey</p>
+        <h2 class="text-3xl font-bold font-heading mt-2">4 simple steps to start investing</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white font-bold text-2xl mb-4">1</div>
+          <h3 class="text-lg font-bold mb-2">Open an Account</h3>
+          <p class="text-muted dark:text-slate-400">Open an account with us in minutes. It's free to sign up with no commitment required.</p>
+        </div>
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white font-bold text-2xl mb-4">2</div>
+          <h3 class="text-lg font-bold mb-2">Select a Development</h3>
+          <p class="text-muted dark:text-slate-400">Browse and select a development to invest in. Every project is backed by The Parklane Group.</p>
+        </div>
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white font-bold text-2xl mb-4">3</div>
+          <h3 class="text-lg font-bold mb-2">Choose Your Amount</h3>
+          <p class="text-muted dark:text-slate-400">Choose your investment amount. Invest as much or as little as you like.</p>
+        </div>
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white font-bold text-2xl mb-4">4</div>
+          <h3 class="text-lg font-bold mb-2">Get Your Returns</h3>
+          <p class="text-muted dark:text-slate-400">Wait for the development to finish and property sales to get your returns, or earn monthly dividends.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Behind the Scenes: 4 Operational Stages -->
   <section class="px-4 py-16 mx-auto max-w-6xl lg:py-20">
+    <div class="text-center mb-12">
+      <p class="text-base text-primary font-semibold tracking-wide uppercase">Behind the Scenes</p>
+      <h2 class="text-3xl font-bold font-heading mt-2 mb-4">What we do for you</h2>
+      <p class="text-xl text-muted dark:text-slate-400 max-w-2xl mx-auto">
+        Our expert team works tirelessly behind the scenes to source, fund, develop and deliver returns on every project.
+      </p>
+    </div>
+
     <div class="grid gap-12 md:gap-16">
 
-      <!-- Step 1 -->
+      <!-- Stage 1: Deal Sourcing -->
       <div class="grid md:grid-cols-2 gap-8 items-center">
         <div class="order-2 md:order-1">
-          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white font-bold text-xl mb-4">1</div>
-          <h2 class="text-3xl font-bold font-heading mb-4">Create Your Free Account</h2>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-primary text-primary font-bold">1</div>
+            <h3 class="text-2xl font-bold font-heading">Deal Sourcing</h3>
+          </div>
           <p class="text-lg text-muted dark:text-slate-400 mb-4">
-            Sign up in minutes with just your email address. No commitment, no fees to join.
-            Once registered, you can browse all available investment opportunities.
+            We examine hundreds of deals every month, working tirelessly to bring only the best projects to our platform.
+            We maximise project value while reducing any risks, and by prioritising critical factors and consulting experts
+            we have everything covered.
           </p>
-          <ul class="space-y-2 text-muted dark:text-slate-400">
-            <li class="flex items-center gap-2">
-              <Icon name="tabler:check" class="w-5 h-5 text-primary flex-shrink-0" />
-              Free to sign up
-            </li>
-            <li class="flex items-center gap-2">
-              <Icon name="tabler:check" class="w-5 h-5 text-primary flex-shrink-0" />
-              No minimum commitment
-            </li>
-            <li class="flex items-center gap-2">
-              <Icon name="tabler:check" class="w-5 h-5 text-primary flex-shrink-0" />
-              Browse all opportunities instantly
-            </li>
-          </ul>
         </div>
-        <div class="order-1 md:order-2 bg-blue-50 dark:bg-slate-800 rounded-2xl p-8 flex items-center justify-center min-h-[240px]">
-          <Icon name="tabler:user-plus" class="w-24 h-24 text-primary/40" />
+        <div class="order-1 md:order-2 bg-blue-50 dark:bg-slate-800 rounded-2xl p-8 flex items-center justify-center min-h-[200px]">
+          <Icon name="tabler:map-search" class="w-20 h-20 text-primary/40" />
         </div>
       </div>
 
-      <!-- Step 2 -->
+      <!-- Stage 2: Fundraising -->
       <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="bg-blue-50 dark:bg-slate-800 rounded-2xl p-8 flex items-center justify-center min-h-[240px]">
-          <Icon name="tabler:building-estate" class="w-24 h-24 text-primary/40" />
+        <div class="bg-blue-50 dark:bg-slate-800 rounded-2xl p-8 flex items-center justify-center min-h-[200px]">
+          <Icon name="tabler:users-group" class="w-20 h-20 text-primary/40" />
         </div>
         <div>
-          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white font-bold text-xl mb-4">2</div>
-          <h2 class="text-3xl font-bold font-heading mb-4">Choose a Project</h2>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-primary text-primary font-bold">2</div>
+            <h3 class="text-2xl font-bold font-heading">Power of the Crowd</h3>
+          </div>
           <p class="text-lg text-muted dark:text-slate-400 mb-4">
-            Browse our curated selection of property projects. Every project is backed by The Parklane Group
-            and has been thoroughly analysed and stress-tested by our team.
+            Using the power of the crowd, our team raises the funds needed to purchase and develop our incredible projects.
+            Joining forces with your fellow UOWNers opens the door to large-scale projects and large-scale returns that are
+            usually off limits. By investing as part of a crowd, you can diversify across multiple projects and invest smaller,
+            more manageable amounts. That's the power of us.
           </p>
-          <ul class="space-y-2 text-muted dark:text-slate-400">
-            <li class="flex items-center gap-2">
-              <Icon name="tabler:check" class="w-5 h-5 text-primary flex-shrink-0" />
-              Development projects with up to 25% returns
-            </li>
-            <li class="flex items-center gap-2">
-              <Icon name="tabler:check" class="w-5 h-5 text-primary flex-shrink-0" />
-              Buy-to-let with 6-9% rental yields
-            </li>
-            <li class="flex items-center gap-2">
-              <Icon name="tabler:check" class="w-5 h-5 text-primary flex-shrink-0" />
-              Detailed project information and risk analysis
-            </li>
-          </ul>
         </div>
       </div>
 
-      <!-- Step 3 -->
+      <!-- Stage 3: Development -->
       <div class="grid md:grid-cols-2 gap-8 items-center">
         <div class="order-2 md:order-1">
-          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white font-bold text-xl mb-4">3</div>
-          <h2 class="text-3xl font-bold font-heading mb-4">Invest Your Amount</h2>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-primary text-primary font-bold">3</div>
+            <h3 class="text-2xl font-bold font-heading">Development & Oversight</h3>
+          </div>
           <p class="text-lg text-muted dark:text-slate-400 mb-4">
-            Invest as much or as little as you like. Whether it's tens of pounds or hundreds of thousands,
-            you can build a diversified property portfolio that suits your budget.
+            Timelines are created by project managers. Once development is underway, surveyors ensure everything is progressing
+            properly and to standard. We'll keep you up to date with what's going on throughout the term, so just put your
+            feet up and wait for the project end.
           </p>
-          <ul class="space-y-2 text-muted dark:text-slate-400">
-            <li class="flex items-center gap-2">
-              <Icon name="tabler:check" class="w-5 h-5 text-primary flex-shrink-0" />
-              No minimum investment
-            </li>
-            <li class="flex items-center gap-2">
-              <Icon name="tabler:check" class="w-5 h-5 text-primary flex-shrink-0" />
-              Diversify across multiple projects
-            </li>
-            <li class="flex items-center gap-2">
-              <Icon name="tabler:check" class="w-5 h-5 text-primary flex-shrink-0" />
-              Simple online process
-            </li>
-          </ul>
         </div>
-        <div class="order-1 md:order-2 bg-blue-50 dark:bg-slate-800 rounded-2xl p-8 flex items-center justify-center min-h-[240px]">
-          <Icon name="tabler:coin-pound" class="w-24 h-24 text-primary/40" />
+        <div class="order-1 md:order-2 bg-blue-50 dark:bg-slate-800 rounded-2xl p-8 flex items-center justify-center min-h-[200px]">
+          <Icon name="tabler:crane" class="w-20 h-20 text-primary/40" />
         </div>
       </div>
 
-      <!-- Step 4 -->
+      <!-- Stage 4: Returns -->
       <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="bg-blue-50 dark:bg-slate-800 rounded-2xl p-8 flex items-center justify-center min-h-[240px]">
-          <Icon name="tabler:chart-line" class="w-24 h-24 text-primary/40" />
+        <div class="bg-blue-50 dark:bg-slate-800 rounded-2xl p-8 flex items-center justify-center min-h-[200px]">
+          <Icon name="tabler:coin-pound" class="w-20 h-20 text-primary/40" />
         </div>
         <div>
-          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white font-bold text-xl mb-4">4</div>
-          <h2 class="text-3xl font-bold font-heading mb-4">Earn Returns</h2>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-primary text-primary font-bold">4</div>
+            <h3 class="text-2xl font-bold font-heading">Returns</h3>
+          </div>
           <p class="text-lg text-muted dark:text-slate-400 mb-4">
-            Sit back and watch your investment grow. For buy-to-let properties, receive monthly rental dividends
-            on the 5th of each month. For development projects, receive your capital plus returns at the end of the term.
+            Our projects can pay out on a monthly basis from the point you invest, with your initial investment paid back at
+            project completion. You can earn from the get-go with our projects. Returns are either end-of-project or monthly
+            payouts. Simply withdraw your funds or reinvest for compounded returns.
           </p>
-          <ul class="space-y-2 text-muted dark:text-slate-400">
-            <li class="flex items-center gap-2">
-              <Icon name="tabler:check" class="w-5 h-5 text-primary flex-shrink-0" />
-              Monthly dividends on buy-to-let
-            </li>
-            <li class="flex items-center gap-2">
-              <Icon name="tabler:check" class="w-5 h-5 text-primary flex-shrink-0" />
-              Capital + returns on developments
-            </li>
-            <li class="flex items-center gap-2">
-              <Icon name="tabler:check" class="w-5 h-5 text-primary flex-shrink-0" />
-              Real-time portfolio tracking
-            </li>
-          </ul>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Key Stats -->
-  <Stats
-    highlight="By The Numbers"
-    title="Our track record speaks for itself"
+  <!-- Investment Types -->
+  <section class="bg-blue-50 dark:bg-slate-800 px-4 py-16 mx-auto lg:py-20">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-base text-primary font-semibold tracking-wide uppercase">Investment Types</p>
+        <h2 class="text-3xl font-bold font-heading mt-2 mb-4">Two ways to invest</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Equity -->
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-slate-700">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 mb-4">
+            <Icon name="tabler:chart-pie" class="w-6 h-6 text-primary" />
+          </div>
+          <h3 class="text-xl font-bold mb-3">Equity (Property Shares)</h3>
+          <p class="text-muted dark:text-slate-400 mb-4">
+            You invest in property shares via a Special Purpose Vehicle (SPV) and receive a proportional share
+            of profit when the development is finished.
+          </p>
+          <ul class="space-y-2 text-sm text-muted dark:text-slate-400">
+            <li class="flex items-center gap-2">
+              <Icon name="tabler:check" class="w-4 h-4 text-primary flex-shrink-0" />
+              Up to 25% targeted returns
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon name="tabler:check" class="w-4 h-4 text-primary flex-shrink-0" />
+              Capital + returns at project end
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon name="tabler:check" class="w-4 h-4 text-primary flex-shrink-0" />
+              Share in capital appreciation
+            </li>
+          </ul>
+        </div>
+        <!-- Debt -->
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-slate-700">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 mb-4">
+            <Icon name="tabler:lock" class="w-6 h-6 text-primary" />
+          </div>
+          <h3 class="text-xl font-bold mb-3">Debt (Secured Lending)</h3>
+          <p class="text-muted dark:text-slate-400 mb-4">
+            Secured lending &mdash; you invest money with the crowd and lend it to a property developer,
+            earning interest from loan repayments.
+          </p>
+          <ul class="space-y-2 text-sm text-muted dark:text-slate-400">
+            <li class="flex items-center gap-2">
+              <Icon name="tabler:check" class="w-4 h-4 text-primary flex-shrink-0" />
+              6-9% annual rental yield
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon name="tabler:check" class="w-4 h-4 text-primary flex-shrink-0" />
+              Monthly dividend payments
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon name="tabler:check" class="w-4 h-4 text-primary flex-shrink-0" />
+              Secured by equitable charge
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How You Get Paid -->
+  <section class="px-4 py-16 mx-auto max-w-6xl lg:py-20">
+    <div class="text-center mb-12">
+      <p class="text-base text-primary font-semibold tracking-wide uppercase">Your Returns</p>
+      <h2 class="text-3xl font-bold font-heading mt-2 mb-4">How you get paid</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="text-center p-6 rounded-xl border border-gray-100 dark:border-slate-700">
+        <Icon name="tabler:calendar-repeat" class="w-10 h-10 text-primary mx-auto mb-3" />
+        <h3 class="font-bold text-lg mb-2">Buy-to-Let</h3>
+        <p class="text-muted dark:text-slate-400">Dividend return paid monthly on the 5th of the month. Rental income shared proportionately between UOWNers.</p>
+      </div>
+      <div class="text-center p-6 rounded-xl border border-gray-100 dark:border-slate-700">
+        <Icon name="tabler:building-bank" class="w-10 h-10 text-primary mx-auto mb-3" />
+        <h3 class="font-bold text-lg mb-2">Development Projects</h3>
+        <p class="text-muted dark:text-slate-400">Capital and return paid at end of project when the borrower has completed their designated exit.</p>
+      </div>
+    </div>
+    <p class="text-center text-muted dark:text-slate-400 mt-8 max-w-2xl mx-auto">
+      Money received in rent or from shares sold is deposited into your UOWN wallet &mdash;
+      from there you can choose to re-invest or withdraw it to your bank account.
+    </p>
+  </section>
+
+  <!-- Why Property -->
+  <section class="bg-blue-50 dark:bg-slate-800 px-4 py-16 mx-auto lg:py-20">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-base text-primary font-semibold tracking-wide uppercase">Why Property?</p>
+      <h2 class="text-3xl font-bold font-heading mt-2 mb-4">The UK property market</h2>
+      <p class="text-xl text-muted dark:text-slate-400 max-w-2xl mx-auto mb-8">
+        The UK property market is the perfect choice for investors &mdash; with limited supply
+        and a growing population, it's a smart investment.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm">
+          <p class="text-4xl font-bold text-primary mb-2">8.5</p>
+          <p class="text-muted font-medium">Years</p>
+          <p class="text-sm text-muted mt-1">Avg. time for property prices to double since 1952</p>
+        </div>
+        <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm">
+          <p class="text-4xl font-bold text-primary mb-2">17.7%</p>
+          <p class="text-muted font-medium">Avg. Return</p>
+          <p class="text-sm text-muted mt-1">Across all 21 UOWN projects to date</p>
+        </div>
+        <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm">
+          <p class="text-4xl font-bold text-primary mb-2">45+</p>
+          <p class="text-muted font-medium">Years Experience</p>
+          <p class="text-sm text-muted mt-1">The Parklane Group's group experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security & Trust -->
+  <Features2
+    title="Security & Trust"
+    subtitle="At UOWN, we prioritise security and work with industry-leading partners to keep your investments safe."
+    highlight="Your Safety"
     items={[
-      { name: 'Avg. Profit Per Project', value: '17.7%' },
-      { name: 'Projects Delivered', value: '21' },
-      { name: 'Platform Users', value: '16,000+' },
-      { name: 'Project Value', value: '£70M+' },
+      {
+        title: 'Parklane Group Backed',
+        description:
+          'Every project is backed by The Parklane Group, with over 45 years of group experience in UK property. Parklane Group owns 50% of UOWN.',
+        icon: 'tabler:building',
+      },
+      {
+        title: 'Cyber Security',
+        description:
+          'Our platform is rigorously tested by independent security experts. We work closely with our partners to stay up-to-date on the latest threats.',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: 'KYC & Payment Security',
+        description:
+          'We use industry-leading third parties for identity verification (KYC) checks and payment security to protect you and your funds.',
+        icon: 'tabler:fingerprint',
+      },
     ]}
   />
-
-  <!-- Power of the Crowd -->
-  <section class="bg-blue-50 dark:bg-slate-800 py-16 md:py-20">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold font-heading mb-4">The Power of the Crowd</h2>
-      <p class="text-xl text-muted dark:text-slate-400 max-w-2xl mx-auto mb-8">
-        Joining forces with fellow UOWNers opens the door to large-scale projects and large-scale returns
-        that are usually off limits, with the ability to diversify across multiple projects
-        and invest smaller, more manageable amounts.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-        <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm">
-          <Icon name="tabler:shield-check" class="w-10 h-10 text-primary mx-auto mb-3" />
-          <h3 class="font-bold mb-1">Parklane Backed</h3>
-          <p class="text-sm text-muted">45+ years of group experience</p>
-        </div>
-        <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm">
-          <Icon name="tabler:lock" class="w-10 h-10 text-primary mx-auto mb-3" />
-          <h3 class="font-bold mb-1">Secured</h3>
-          <p class="text-sm text-muted">Many investments secured by charges</p>
-        </div>
-        <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm">
-          <Icon name="tabler:report-analytics" class="w-10 h-10 text-primary mx-auto mb-3" />
-          <h3 class="font-bold mb-1">Transparent</h3>
-          <p class="text-sm text-muted">Regular updates on every project</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Risk Notice -->
   <section class="px-4 py-12 mx-auto max-w-4xl">
     <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-6">
       <h3 class="font-bold text-amber-800 dark:text-amber-200 mb-2">Important Risk Information</h3>
-      <p class="text-sm text-amber-700 dark:text-amber-300">
-        House prices can fall as well as rise and you may not get back all of the money you invest.
-        Rates of return quoted on this website are estimates only and are not guaranteed.
-        Investments are not protected under the Financial Services Compensation Scheme.
-        Please read our full risk statements before investing.
-      </p>
+      <ul class="text-sm text-amber-700 dark:text-amber-300 space-y-1">
+        <li>House prices can fall as well as rise and you may not get back all of the money you invest.</li>
+        <li>Rates of return quoted on this website are estimates only and are not guaranteed.</li>
+        <li>Investments are not protected under the Financial Services Compensation Scheme.</li>
+        <li>Our forecasting tools help with the guesswork but are not a reliable way to predict the future.</li>
+        <li>Invested capital is illiquid.</li>
+      </ul>
     </div>
   </section>
 

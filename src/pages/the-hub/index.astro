@@ -1,19 +1,19 @@
 ---
-import { useStoryblokApi } from '@storyblok/astro'
-import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
-import BaseLayout from '../../layouts/BaseLayout.astro'
+import Layout from '~/layouts/PageLayout.astro';
+import BlogList from '~/components/blog/List.astro';
+import Headline from '~/components/blog/Headline.astro';
+import { fetchPosts } from '~/utils/blog';
 
-const storyblokApi = useStoryblokApi();
-const { data } = await storyblokApi.get('cdn/stories/the-hub-new/home', {
-  version: import.meta.env.DEV ? "draft" : "published",
-});
-const content = data.story.content;
+const posts = await fetchPosts();
+const meta = {
+  title: 'The Hub',
+  description: 'Latest articles and insights',
+};
 ---
-<html lang="en">
-  <head>
-    <title>Index</title>
-  </head>
-  <body>
-    <StoryblokComponent blok={content} />
-  </body>
-</html>
+
+<Layout {meta}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <Headline>The Hub</Headline>
+    <BlogList posts={posts.slice(0, 10)} />
+  </section>
+</Layout>

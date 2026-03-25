@@ -1,22 +1,14 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
-import image from '@astrojs/image';
 import mdx from '@astrojs/mdx';
-import partytown from '@astrojs/partytown';
-import compress from 'astro-compress';
+import sitemap from '@astrojs/sitemap';
+import react from '@astrojs/react';
+import icon from 'astro-icon';
 import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs';
-import storyblok from '@storyblok/astro';
-import { loadEnv } from 'vite';
 import { SITE } from './src/config.mjs';
-import alpinejs from "@astrojs/alpinejs";
-import compressor from "astro-compressor";
-const env = loadEnv("", process.cwd(), 'STORYBLOK');
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const whenExternalScripts = (items = []) => SITE.googleAnalyticsId ? Array.isArray(items) ? items.map(item => item()) : [items()] : [];
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,48 +16,21 @@ export default defineConfig({
   base: SITE.basePathname,
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',
   output: 'static',
-  //output: 'server',
 
   markdown: {
-    remarkPlugins: [readingTimeRemarkPlugin]
+    remarkPlugins: [readingTimeRemarkPlugin],
   },
-  integrations: [tailwind({
-    config: {
-      applyBaseStyles: true
-    }
-  }), sitemap(), image({
-    serviceEntryPoint: '@astrojs/image/sharp'
-  }), mdx(), storyblok({
-    accessToken: env.STORYBLOK_TOKEN,
-    components: {
-      // Add your components here
-      HubPost: 'storyblok/HubPost',
-      HubPostList: 'storyblok/HubPostList',
-      page: 'storyblok/Page'
-    },
-    apiOptions: {
-      // Choose your Storyblok space region
-      region: 'eu'
-    }
-  }), ...whenExternalScripts(() => partytown({
-    config: {
-      forward: ['dataLayer.push']
-    }
-  })), compress({
-    css: true,
-    html: {
-      removeAttributeQuotes: false
-    },
-    img: false,
-    js: true,
-    svg: false,
-    logger: 1
-  }), alpinejs(), compressor({ gzip: false, brotli: true })],
+  integrations: [
+    mdx(),
+    sitemap(),
+    react(),
+    icon(),
+  ],
   vite: {
     resolve: {
       alias: {
-        '~': path.resolve(__dirname, './src')
-      }
-    }
-  }
+        '~': path.resolve(__dirname, './src'),
+      },
+    },
+  },
 });

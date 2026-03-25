@@ -1,0 +1,96 @@
+---
+import AnimatedCard from '~/components/AnimatedCard';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Card Demo</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background: #f8f8f6;
+        color: #1a2744;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      main {
+        min-height: 300vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 200px;
+        padding: 40vh 20px;
+      }
+
+      .intro {
+        text-align: center;
+        max-width: 600px;
+      }
+
+      .intro h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1a2744;
+        margin-bottom: 16px;
+      }
+
+      .intro p {
+        color: #5a6a7a;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .spacer {
+        height: 30vh;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="intro">
+        <h1>Animated Card Component</h1>
+        <p>Scroll down to see the cards animate with rotation, scale, and dynamic shadow effects powered by Framer Motion.</p>
+      </div>
+
+      <AnimatedCard
+        client:visible
+        icon="🏢"
+        title="City Centre"
+        returns="15–18% Returns"
+        duration="18 months"
+        backgroundImage="/terrazzo-bg.svg"
+      />
+
+      <AnimatedCard
+        client:visible
+        icon="🏡"
+        title="Suburban"
+        returns="12–15% Returns"
+        duration="24 months"
+        backgroundImage="/terrazzo-bg.svg"
+      />
+
+      <AnimatedCard
+        client:visible
+        icon="🌊"
+        title="Waterfront"
+        returns="18–22% Returns"
+        duration="12 months"
+        backgroundImage="/terrazzo-bg.svg"
+      />
+
+      <div class="spacer"></div>
+    </main>
+  </body>
+</html>

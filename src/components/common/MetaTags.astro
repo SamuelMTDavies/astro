@@ -1,7 +1,5 @@
 ---
-import { AstroSeo } from '@astrolib/seo';
-import { GoogleAnalytics } from '@astrolib/analytics';
-import { getImage } from '@astrojs/image';
+import { getImage } from 'astro:assets';
 
 import { SITE } from '~/config.mjs';
 import { MetaSEO } from '~/types';
@@ -9,7 +7,6 @@ import { getCanonical, getAsset } from '~/utils/permalinks';
 import { getRelativeUrlByFilePath } from '~/utils/directories';
 
 import CustomStyles from '~/components/CustomStyles.astro';
-import SplitbeeAnalytics from './SplitbeeAnalytics.astro';
 
 export interface Props extends MetaSEO {
   dontUseTitleTemplate?: boolean;
@@ -19,7 +16,6 @@ const defaultImage = SITE.defaultImage
   ? (
       await getImage({
         src: SITE.defaultImage,
-        alt: 'Default image',
         width: 1200,
         height: 628,
       })
@@ -41,6 +37,8 @@ const {
   dontUseTitleTemplate = false,
 } = Astro.props;
 
+const formattedTitle = dontUseTitleTemplate ? title : `${title} — ${SITE.name}`;
+
 const image =
   typeof _image === 'string'
     ? new URL(_image, Astro.site)
@@ -48,49 +46,37 @@ const image =
     ? // @ts-ignore
       new URL(getRelativeUrlByFilePath(_image.src), Astro.site)
     : null;
+
+const robotsContent = [
+  noindex ? 'noindex' : 'index',
+  nofollow ? 'nofollow' : 'follow',
+].join(', ');
 ---
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<AstroSeo
-  title={title}
-  titleTemplate={dontUseTitleTemplate ? '%s' : `%s — ${SITE.name}`}
-  description={description}
-  canonical={String(canonical)}
-  noindex={noindex}
-  nofollow={nofollow}
-  openGraph={{
-    url: String(canonical),
-    title: ogTitle,
-    description: description,
-    type: ogType,
-    images: image
-      ? [
-          {
-            url: image.toString(),
-            alt: ogTitle,
-          },
-        ]
-      : undefined,
-    // site_name: 'SiteName',
-  }}
-  twitter={{
-    // handle: '@handle',
-    // site: '@site',
-    cardType: image ? 'summary_large_image' : undefined,
-  }}
-/>
+<title>{formattedTitle}</title>
+{description && <meta name="description" content={description} />}
+<meta name="robots" content={robotsContent} />
+{canonical && <link rel="canonical" href={String(canonical)} />}
+
+<!-- Open Graph -->
+<meta property="og:type" content={ogType} />
+<meta property="og:title" content={ogTitle} />
+{description && <meta property="og:description" content={description} />}
+{canonical && <meta property="og:url" content={String(canonical)} />}
+{image && <meta property="og:image" content={image.toString()} />}
+{image && <meta property="og:image:alt" content={ogTitle} />}
+
+<!-- Twitter -->
+{image && <meta name="twitter:card" content="summary_large_image" />}
+{image && <meta name="twitter:image" content={image.toString()} />}
 
 <CustomStyles />
 
 <!-- Google Site Verification -->
 {SITE.googleSiteVerificationId && <meta name="google-site-verification" content={SITE.googleSiteVerificationId} />}
-
-<!-- Google Analytics -->
-{SITE.googleAnalyticsId && <GoogleAnalytics id={String(SITE.googleAnalyticsId)} partytown={true} />}
-
-{SITE.splitbeeAnalytics?.enabled && <SplitbeeAnalytics {...SITE.splitbeeAnalytics} />}
 
 <link rel="shortcut icon" href={getAsset('/favicon.ico')} />
 <link rel="icon" type="image/svg+xml" href={getAsset('/favicon.svg')} />
